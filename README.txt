@@ -18,6 +18,8 @@ network-scanner/
 ├── scanner.py
 ├── data/
 │ └── oui.txt 
+├── scanner/
+│ └── keep.txt 
 ├── logo.png 
 ├── requirements.txt
 └── README.md
