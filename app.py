@@ -105,14 +105,14 @@ def main():
     st.title("Your Trusty Network Scanner")
     st.info("Note: MAC addresses may not be visible without root rights.")
 
-if is_localhost():
-    if st.button("Yes We Scan!"):
-        with st.spinner('running...'):
-            run_scan()
-            time.sleep(2)
-        st.success('Done!')
-else:
-    st.warning("Scanning is disabled in hosted/cloud environments.")
+    if is_localhost():
+        if st.button("Yes We Scan!"):
+            with st.spinner('running...'):
+                run_scan()
+                time.sleep(2)
+            st.success('Done!')
+    else:
+        st.warning("Scanning is disabled in hosted/cloud environments.")
 
     devices = load_scanner_data()
     stats = load_statistics()
@@ -134,7 +134,7 @@ else:
             ip = device.get("ip", "unknown")
             mac = device.get("mac", "unknown")
             hostname = device.get("hostname") or resolve_hostname(ip)
-            vendor = lookup_vendor(mac)
+            vendor = lookup_vendor(mac, oui_data)
             last_seen = device.get("last_seen", "unbekannt")
             device_type = device.get("device_type") or get_device_type(mac, hostname)
 
