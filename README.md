@@ -13,8 +13,7 @@ A user-friendly network scanner built with Python and Streamlit. Detects devices
 
 # Project Structure
 
-'''
-
+```
 network-scanner/
 ├── app.py 
 ├── scanner.py
@@ -25,8 +24,7 @@ network-scanner/
 ├── logo.png 
 ├── requirements.txt
 └── README.md
-
-'''
+```
 
 # Requirements
 
