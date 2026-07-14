@@ -5,8 +5,19 @@ import os
 import json
 import time
 import socket
+import ipaddress
 
-IP_RANGE = "192.168.0.0/24"
+def get_local_subnet():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        s.connect(("8.8.8.8", 80))
+        local_ip = s.getsockname()[0]
+    finally:
+        s.close()
+    network = ipaddress.ip_network(f"{local_ip}/24", strict=False)
+    return str(network)
+
+IP_RANGE = get_local_subnet()
 OUTPUT_FILE = "scanner/scanner_output.json"
 STATISTICS_FILE = "scanner/statistics.json"
 
