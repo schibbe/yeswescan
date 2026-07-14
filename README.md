@@ -6,10 +6,11 @@ I built this project to better understand how network discovery works in practic
 
 # Demo
 
-
+<img width="1440" height="900" alt="Bild12" src="https://github.com/user-attachments/assets/04fbe8f6-428e-4f76-9ffa-a025f3dfa205" />
 *Scan your local network and see connected devices at a glance*
 
-*Device details including vendor identification via OUI lookup*
+<img width="2880" height="1800" alt="Bild11" src="https://github.com/user-attachments/assets/dbb5b123-808e-4c6a-b3e9-502e9b87e288" />
+*Detected devices with vendor and type identification*
 
 # Features
 
