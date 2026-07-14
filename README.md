@@ -1,6 +1,15 @@
-# Network Device Scanner
+A lightweight network scanning tool to detect and identify devices on your local network.
 
-A user-friendly network scanner built with Python and Streamlit. Detects devices on your local network via ARP or ping, identifies vendors using a local OUI database, and compares scan results over time.
+# Motivation
+
+I built this project to better understand how network discovery works in practice — how devices announce themselves on a local network and how that information can be used defensively, e.g. to spot unknown or unexpected devices.
+
+# Demo
+
+
+*Scan your local network and see connected devices at a glance*
+
+*Device details including vendor identification via OUI lookup*
 
 # Features
 
@@ -11,10 +20,27 @@ A user-friendly network scanner built with Python and Streamlit. Detects devices
 - Scan statistics & historical comparison
 - Minimal logging with JSON output
 
+# Built With
+
+Python 3.8+, Streamlit, Scapy, Pandas, Scikit-Learn
+
+# Getting Started
+
+Clone the repository and install the dependencies:
+```
+git clone https://github.com/schibbe/yeswescan.git
+cd yeswescan
+pip install -r requirements.txt
+streamlit run app.py
+
+On Linux/macOS, root privileges enable more precise ARP scanning:
+sudo streamlit run app.py
+```
+
 # Project Structure
 
 ```
-network-scanner/
+yeswescan/
 ├── app.py 
 ├── scanner.py
 ├── data/
@@ -25,33 +51,6 @@ network-scanner/
 ├── requirements.txt
 └── README.md
 ```
-
-# Requirements
-
-Python 3.8+ and the following packages are required
--streamlit
--scapy
--pandas
--scikit-learn
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-
-# Usage 
-
-Start the web app:
-
-streamlit run app.py
-
-Run the scanner manually (optional):
-
-python scanner/scanner.py
-
-On Linux/macOS, root privileges enable more precise ARP scanning:
-
-sudo streamlit run app.py
 
 # Output Sample
 
@@ -64,7 +63,17 @@ sudo streamlit run app.py
   }
 ]
 
+# What I Learned
 
-# Author
+- How ARP and ping-based network discovery work at a practical level
+- Vendor identification via IEEE OUI databases
+- Building a heuristics-based classification system
+- Structuring a Python project for readability and reuse
 
-Built with curiosity for learning and showcasing security projects.
+# Disclaimer
+
+This project is intended for use on networks you own or have explicit permission to scan. It is provided for demonstration and educational purposes only.
+
+# About
+
+Developed by Simon as part of a series of small projects exploring networking and security fundamentals.
