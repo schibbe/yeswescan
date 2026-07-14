@@ -79,7 +79,7 @@ def resolve_hostname(ip):
         return "Unbekannt"
 
 def run_scan():
-    subprocess.run(["python3", "scanner/scanner.py"])
+    subprocess.run(["python3", "scanner.py"])
 
 def compare_with_previous(devices):
     if os.path.exists("scanner/last_devices.json"):
